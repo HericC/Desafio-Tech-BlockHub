@@ -2,7 +2,7 @@ import React from 'react';
 
 import { DivStyled } from './styled';
 
-function Template() {
+function Template(): JSX.Element {
   return (
     <DivStyled>
       <h2>Template</h2>

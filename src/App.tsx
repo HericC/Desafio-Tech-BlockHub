@@ -1,21 +1,24 @@
 import React from 'react';
-
 import { BrowserRouter } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
-
 import { ThemeProvider } from 'styled-components';
-import theme from './styles/theme';
-
+import { ToastContainer } from 'react-toastify';
+import { AuthProvider } from './Contexts/AuthContext';
+import { LoadingProvider } from './Contexts/LoadingContext';
 import GlobalStyles from './styles/GlobalStyle';
+import theme from './styles/theme';
 import Routes from './routes';
 
 function App(): JSX.Element {
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <Routes />
-        <ToastContainer autoClose={3000} className="toast-container" />
+        <LoadingProvider>
+          <AuthProvider>
+            <GlobalStyles />
+            <Routes />
+            <ToastContainer autoClose={3000} className="toast-container" />
+          </AuthProvider>
+        </LoadingProvider>
       </ThemeProvider>
     </BrowserRouter>
   );

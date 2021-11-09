@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
   * {
@@ -9,14 +10,14 @@ export default createGlobalStyle`
   }
 
   html, body, #root {
-    height: 100%;
+    padding: 0 10px;
   }
 
   body {
     font-family: sans-serif;
     line-height: 1.5;
     color: ${({ theme }) => theme.colors.primary};
-    background-color: #dddddd;
+    background-color: ${({ theme }) => theme.colors.background};
   }
 
   a {
@@ -28,13 +29,51 @@ export default createGlobalStyle`
     list-style: none;
   }
 
-  button {
-    cursor: pointer;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    background-color: ${({ theme }) => theme.colors.primary};
+  form {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 5px;
+    }
+
+    input {
+      margin-bottom: 20px;
+      height: 40px;
+      padding: 0 10px;
+      border: 1px solid ${({ theme }) => theme.colors.background};
+      border-radius: 4px;
+
+      :focus {
+        border-color: ${({ theme }) => theme.colors.primaryLight};
+      }
+    }
+
+    input.errors {
+      border: 1px solid red;
+    }
+
+    button {
+      cursor: pointer;
+      color: white;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 16px;
+      background-color: ${({ theme }) => theme.colors.primary};
+      transition: background-color 300ms ease-in-out;
+
+      :hover {
+        background-color: ${({ theme }) => theme.colors.primaryDark};
+      }
+    }
   }
 `;
