@@ -25,6 +25,7 @@ function MainRoutes(): JSX.Element {
 
       <Route path="/" element={<PublicOutlet />}>
         <Route path="/login" element={<Login />} />
+        <Route path="/logout" element={<Navigate to="/login" />} />
       </Route>
 
       <Route path="*" element={<Page404 />} />

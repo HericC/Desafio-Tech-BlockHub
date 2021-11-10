@@ -1,18 +1,15 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../../contexts/AuthContext';
+import React from 'react';
 import { Container } from './styled';
+import Header from '../../components/Header';
 
 function Home(): JSX.Element {
-  const { handleLogout } = useContext(AuthContext);
-
   return (
-    <Container>
-      <h1>Ola mundo</h1>
-
-      <button type="button" onClick={handleLogout}>
-        Logout
-      </button>
-    </Container>
+    <>
+      <Header />
+      <Container>
+        <h1>Ola mundo</h1>
+      </Container>
+    </>
   );
 }
 
