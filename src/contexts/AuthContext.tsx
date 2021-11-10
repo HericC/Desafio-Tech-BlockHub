@@ -13,7 +13,9 @@ const AuthContext = createContext({
 });
 
 function AuthProvider({ children }: JSX.ElementChildrenAttribute): JSX.Element {
-  const { authenticated, handleLogin, handleLogout } = UseAuth();
+  const { authLoading, authenticated, handleLogin, handleLogout } = UseAuth();
+
+  if (!authLoading) return <></>;
 
   return (
     <AuthContext.Provider value={{ authenticated, handleLogin, handleLogout }}>

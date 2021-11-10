@@ -6,12 +6,14 @@ import { LoadingContext } from '../contexts/LoadingContext';
 import { payloadTypes } from '../pages/Login/dto';
 
 type propTypes = {
+  authLoading: boolean;
   authenticated: boolean;
   handleLogin: (payload: payloadTypes) => Promise<void>;
   handleLogout: () => Promise<void>;
 };
 
 function UseAuth(): propTypes {
+  const [authLoading, setAuthLoading] = useState(false);
   const [authenticated, setAuthenticated] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies(['token']);
   const { handleLoading } = useContext(LoadingContext);
@@ -23,6 +25,7 @@ function UseAuth(): propTypes {
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
       setAuthenticated(true);
     }
+    setAuthLoading(true);
   }, []);
 
   async function handleLogin(payload: payloadTypes) {
@@ -50,7 +53,7 @@ function UseAuth(): propTypes {
     setAuthenticated(false);
   }
 
-  return { authenticated, handleLogin, handleLogout };
+  return { authenticated, handleLogin, handleLogout, authLoading };
 }
 
 export default UseAuth;
