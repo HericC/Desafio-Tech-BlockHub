@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
-import { AuthContext } from './Contexts/AuthContext';
+import { AuthContext } from './contexts/AuthContext';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Page404 from './pages/Page404';

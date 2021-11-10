@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { toast } from 'react-toastify';
 import axios from '../services/axios';
-import { LoadingContext } from '../Contexts/LoadingContext';
+import { LoadingContext } from '../contexts/LoadingContext';
 import { payloadTypes } from '../pages/Login/dto';
 
 type propTypes = {

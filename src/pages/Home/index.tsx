@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../../Contexts/AuthContext';
+import { AuthContext } from '../../contexts/AuthContext';
 import { Container } from './styled';
 
 function Home(): JSX.Element {

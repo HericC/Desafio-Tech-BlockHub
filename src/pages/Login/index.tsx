@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../../Contexts/AuthContext';
+import { AuthContext } from '../../contexts/AuthContext';
 import { Container } from './styled';
 import validator from 'validator';
 import { toast } from 'react-toastify';
