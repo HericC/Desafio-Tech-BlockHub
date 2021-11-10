@@ -9,10 +9,6 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
-  html, body, #root {
-    padding: 0 10px;
-  }
-
   body {
     font-family: sans-serif;
     line-height: 1.5;
