@@ -5,7 +5,7 @@ import { Nav } from './styled';
 import Logo from '../../images/BlockHubLogo.png';
 import { AuthContext } from '../../contexts/AuthContext';
 
-function Header() {
+function Header(): JSX.Element {
   const [mobile, setMobile] = useState(false);
   const { handleLogout } = useContext(AuthContext);
 
