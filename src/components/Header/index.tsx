@@ -37,8 +37,8 @@ function Header(): JSX.Element {
           </Link>
         </li>
         <li>
-          <Link to="/#" onClick={closeMobile}>
-            Cadastrar Horas
+          <Link to="/registration/hours" onClick={closeMobile}>
+            Lançar Horas
           </Link>
         </li>
         <li>

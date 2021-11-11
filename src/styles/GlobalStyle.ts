@@ -39,12 +39,14 @@ export default createGlobalStyle`
       flex-direction: column;
       font-weight: bold;
 
-      input {
+      input,
+      select {
         margin-left: 15px;
       }
     }
 
-    input {
+    input,
+    select {
       margin-bottom: 20px;
       height: 40px;
       padding: 0 10px;
@@ -54,9 +56,19 @@ export default createGlobalStyle`
       :focus {
         border-color: ${({ theme }) => theme.colors.primaryLight};
       }
+
+      ::-webkit-outer-spin-button,
+      ::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+      }
+
+      [type=number] {
+          -moz-appearance:textfield;
+      }
     }
 
-    input.errors {
+    input.errors,
+    select.errors {
       border: 1px solid ${({ theme }) => theme.colors.alert};
     }
 
