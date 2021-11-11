@@ -40,6 +40,7 @@ function UseAuth(): propTypes {
       });
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
       setAuthenticated(true);
+      location.reload();
       handleLoading(false);
     } catch (err) {
       toast.error('Credenciais inválidas!');
@@ -50,6 +51,7 @@ function UseAuth(): propTypes {
   async function handleLogout() {
     removeCookie('token');
     axios.defaults.headers.common['Authorization'] = '';
+    location.reload();
     setAuthenticated(false);
   }
 
