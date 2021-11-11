@@ -13,6 +13,10 @@ function Header(): JSX.Element {
     setMobile(!mobile);
   }
 
+  function closeMobile() {
+    setMobile(false);
+  }
+
   return (
     <Nav>
       <div id="logo">
@@ -23,16 +27,24 @@ function Header(): JSX.Element {
 
       <ul className={mobile ? 'active' : ''}>
         <li>
-          <Link to="/registration/user">Cadastrar Usuário</Link>
+          <Link to="/registration/user" onClick={closeMobile}>
+            Cadastrar Usuário
+          </Link>
         </li>
         <li>
-          <Link to="/registration/project">Cadastrar Projeto</Link>
+          <Link to="/registration/project" onClick={closeMobile}>
+            Cadastrar Projeto
+          </Link>
         </li>
         <li>
-          <Link to="/#">Cadastrar Horas</Link>
+          <Link to="/#" onClick={closeMobile}>
+            Cadastrar Horas
+          </Link>
         </li>
         <li>
-          <Link to="/#">Relatório</Link>
+          <Link to="/#" onClick={closeMobile}>
+            Relatório
+          </Link>
         </li>
         <li>
           <Link to="/logout" onClick={handleLogout}>
