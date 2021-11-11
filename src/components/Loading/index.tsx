@@ -5,6 +5,7 @@ import { Container } from './styled';
 type propTypes = {
   isLoading: boolean;
 };
+
 function Loading(props: propTypes): JSX.Element {
   if (!props.isLoading) return <></>;
 
