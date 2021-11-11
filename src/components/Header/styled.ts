@@ -19,7 +19,7 @@ const Nav = styled.nav`
     }
 
     a {
-      padding: 0 10px;
+      padding: 0 15px;
       display: inline-flex;
       align-items: center;
       transition: all 300ms;
@@ -58,7 +58,7 @@ const Nav = styled.nav`
     display: none;
   }
 
-  @media (max-width: 940px) {
+  @media (max-width: 1111px) {
     #logo {
       margin-left: 20px;
     }
@@ -68,7 +68,7 @@ const Nav = styled.nav`
     }
   }
 
-  @media (max-width: 860px) {
+  @media (max-width: 1031px) {
     #logout {
       display: none;
     }

@@ -42,6 +42,11 @@ function Header(): JSX.Element {
           </Link>
         </li>
         <li>
+          <Link to="/launch" onClick={closeMobile}>
+            Lançamentos
+          </Link>
+        </li>
+        <li>
           <Link to="/#" onClick={closeMobile}>
             Relatório
           </Link>

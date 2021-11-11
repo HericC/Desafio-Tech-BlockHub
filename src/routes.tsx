@@ -3,6 +3,7 @@ import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import { AuthContext } from './contexts/AuthContext';
 import Home from './pages/Home';
 import HoursRegistration from './pages/HoursRegistration';
+import Launch from './pages/Launch';
 import Login from './pages/Login';
 import Page404 from './pages/Page404';
 import ProjectRegistration from './pages/ProjectRegistration';
@@ -24,6 +25,7 @@ function MainRoutes(): JSX.Element {
       <Route path="" element={<PrivateOutlet />}>
         <Route path="" element={<Navigate to="/dashboard" />} />
         <Route path="dashboard" element={<Home />} />
+        <Route path="launch" element={<Launch />} />
       </Route>
 
       <Route path="" element={<PublicOutlet />}>
