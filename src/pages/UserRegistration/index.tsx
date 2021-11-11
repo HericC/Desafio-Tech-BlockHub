@@ -23,11 +23,8 @@ function UserRegistration(): JSX.Element {
   const { handleLoading } = useContext(LoadingContext);
 
   useEffect(() => {
-    const element = document.querySelector(
-      'input:first-child',
-    ) as HTMLFormElement;
-
-    element.focus();
+    const element = document.querySelector('form input') as HTMLInputElement;
+    element?.focus();
   }, []);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {

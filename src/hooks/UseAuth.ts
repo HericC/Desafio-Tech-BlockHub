@@ -42,7 +42,7 @@ function UseAuth(): propTypes {
       setAuthenticated(true);
       handleLoading(false);
     } catch (err) {
-      toast.warning('Credenciais inválidas!');
+      toast.error('Credenciais inválidas!');
       handleLoading(false);
     }
   }

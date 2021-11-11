@@ -18,8 +18,8 @@ function Login(): JSX.Element {
   const { handleLogin } = useContext(AuthContext);
 
   useEffect(() => {
-    const form = document.querySelector('#formLogin') as HTMLFormElement;
-    form.email.focus();
+    const element = document.querySelector('form input') as HTMLInputElement;
+    element?.focus();
   }, []);
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
