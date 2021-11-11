@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { removeClassErrors, setErrors } from '../../utils/inputErrors';
 import { AuthContext } from '../../contexts/AuthContext';
 import { Container } from './styled';
 import validator from 'validator';
-import { toast } from 'react-toastify';
 import { payloadTypes } from './dto';
 
 type dataTypes = {
@@ -17,38 +17,31 @@ function Login(): JSX.Element {
   const [password, setPassword] = useState('');
   const { handleLogin } = useContext(AuthContext);
 
-  let formError = false;
-
   useEffect(() => {
     const form = document.querySelector('#formLogin') as HTMLFormElement;
     form.email.focus();
   }, []);
 
-  function setErrors(element: HTMLInputElement, msg: string) {
-    formError = true;
-    element.classList.add('errors');
-    toast.warning(msg);
-  }
-
-  function removeClassErrors(element: HTMLInputElement) {
-    element.classList.remove('errors');
-  }
-
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const { email, password } = event.target as targetTypes;
+    let formError = false;
 
     if (!email.value) {
+      formError = true;
       setErrors(email, 'E-mail requerido');
     } else if (!validator.isEmail(email.value)) {
+      formError = true;
       setErrors(email, 'E-mail inválido');
     } else {
       removeClassErrors(email);
     }
 
     if (!password.value) {
+      formError = true;
       setErrors(password, 'Senha requerido');
     } else if (password.value.length < 4 || password.value.length > 50) {
+      formError = true;
       setErrors(password, 'A senha precisa ter entre 4 e 50 caracteres');
     } else {
       removeClassErrors(password);
