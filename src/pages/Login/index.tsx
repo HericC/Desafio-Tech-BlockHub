@@ -57,7 +57,7 @@ function Login(): JSX.Element {
 
   return (
     <Container>
-      <form onSubmit={handleSubmit} id="formLogin">
+      <form onSubmit={handleSubmit}>
         <h2>Login</h2>
 
         <input
