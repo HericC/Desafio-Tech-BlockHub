@@ -98,7 +98,7 @@ const Nav = styled.nav`
 
         :last-child {
           display: flex;
-          background-color: #c3073f;
+          background-color: ${({ theme }) => theme.colors.alert};
         }
 
         a {

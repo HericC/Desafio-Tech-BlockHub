@@ -8,6 +8,7 @@ const defaultTheme = {
     secondaryDark: '#782e00',
     background: '#ddd',
     backgroundDark: '#b1b1b1',
+    alert: '#c3073f',
   },
   spacings: {
     small: '1rem',

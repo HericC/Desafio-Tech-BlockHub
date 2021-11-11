@@ -57,7 +57,7 @@ export default createGlobalStyle`
     }
 
     input.errors {
-      border: 1px solid red;
+      border: 1px solid ${({ theme }) => theme.colors.alert};
     }
 
     button {
