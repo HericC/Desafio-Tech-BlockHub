@@ -37,7 +37,11 @@ export default createGlobalStyle`
     label {
       display: flex;
       flex-direction: column;
-      margin-bottom: 5px;
+      font-weight: bold;
+
+      input {
+        margin-left: 15px;
+      }
     }
 
     input {

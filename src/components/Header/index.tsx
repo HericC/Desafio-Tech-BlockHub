@@ -23,7 +23,7 @@ function Header(): JSX.Element {
 
       <ul className={mobile ? 'active' : ''}>
         <li>
-          <Link to="/#">Cadastrar Usuário</Link>
+          <Link to="/registration/user">Cadastrar Usuário</Link>
         </li>
         <li>
           <Link to="/#">Cadastrar Projeto</Link>

@@ -4,6 +4,7 @@ import { AuthContext } from './contexts/AuthContext';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Page404 from './pages/Page404';
+import UserRegistration from './pages/UserRegistration';
 
 function PrivateOutlet() {
   const { authenticated } = useContext(AuthContext);
@@ -26,6 +27,11 @@ function MainRoutes(): JSX.Element {
       <Route path="" element={<PublicOutlet />}>
         <Route path="login" element={<Login />} />
         <Route path="logout" element={<Navigate to="/login" />} />
+      </Route>
+
+      <Route path="registration" element={<PrivateOutlet />}>
+        <Route path="" element={<Page404 />} />
+        <Route path="user" element={<UserRegistration />} />
       </Route>
 
       <Route path="*" element={<Page404 />} />
