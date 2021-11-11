@@ -26,7 +26,7 @@ function Header(): JSX.Element {
           <Link to="/registration/user">Cadastrar Usuário</Link>
         </li>
         <li>
-          <Link to="/#">Cadastrar Projeto</Link>
+          <Link to="/registration/project">Cadastrar Projeto</Link>
         </li>
         <li>
           <Link to="/#">Cadastrar Horas</Link>

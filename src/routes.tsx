@@ -4,6 +4,7 @@ import { AuthContext } from './contexts/AuthContext';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Page404 from './pages/Page404';
+import ProjectRegistration from './pages/ProjectRegistration';
 import UserRegistration from './pages/UserRegistration';
 
 function PrivateOutlet() {
@@ -32,6 +33,7 @@ function MainRoutes(): JSX.Element {
       <Route path="registration" element={<PrivateOutlet />}>
         <Route path="" element={<Page404 />} />
         <Route path="user" element={<UserRegistration />} />
+        <Route path="project" element={<ProjectRegistration />} />
       </Route>
 
       <Route path="*" element={<Page404 />} />
