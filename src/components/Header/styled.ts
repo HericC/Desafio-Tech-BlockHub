@@ -59,7 +59,7 @@ const Nav = styled.nav`
     display: none;
   }
 
-  @media (max-width: 1111px) {
+  @media (max-width: 1120px) {
     #logo {
       margin-left: 20px;
     }
@@ -69,7 +69,7 @@ const Nav = styled.nav`
     }
   }
 
-  @media (max-width: 1031px) {
+  @media (max-width: 1040px) {
     #logout {
       display: none;
     }

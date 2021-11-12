@@ -7,6 +7,7 @@ import Launch from './pages/Launch';
 import Login from './pages/Login';
 import Page404 from './pages/Page404';
 import ProjectRegistration from './pages/ProjectRegistration';
+import ReportLaunch from './pages/ReportLaunch';
 import UserRegistration from './pages/UserRegistration';
 
 function PrivateOutlet() {
@@ -26,6 +27,7 @@ function MainRoutes(): JSX.Element {
         <Route path="" element={<Navigate to="/dashboard" />} />
         <Route path="dashboard" element={<Home />} />
         <Route path="launch" element={<Launch />} />
+        <Route path="report" element={<ReportLaunch />} />
       </Route>
 
       <Route path="" element={<PublicOutlet />}>

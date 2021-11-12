@@ -7,7 +7,7 @@ function handleProjectHoursJob(
   arrProjects: projectType[],
 ): void {
   arrProjects.forEach((project) => {
-    if (project._id === element.project) {
+    if (project._id === element.project || project._id === element.user) {
       let arrIndex = -1;
 
       arrProjectHoursJob.forEach((val, index) => {

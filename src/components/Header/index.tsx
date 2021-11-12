@@ -31,6 +31,9 @@ function Header(): JSX.Element {
       case '/launch':
         child = 4;
         break;
+      case '/report':
+        child = 5;
+        break;
       default:
         break;
     }
@@ -78,8 +81,8 @@ function Header(): JSX.Element {
           </Link>
         </li>
         <li>
-          <Link to="/#" onClick={closeMobile}>
-            Relatório
+          <Link to="/report" onClick={closeMobile}>
+            Relatórios
           </Link>
         </li>
         <li>
