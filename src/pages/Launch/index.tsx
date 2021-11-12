@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import Header from '../../components/Header';
 import { LoadingContext } from '../../contexts/LoadingContext';
 import axios from '../../services/axios';
+import { projectType, userType } from '../HoursRegistration/dto';
 import { launchType } from './dto';
 import { Container } from './styled';
 
@@ -15,30 +16,41 @@ function Launch(): JSX.Element {
     async function getAPI() {
       try {
         handleLoading(true);
-        const { data } = await axios.get('/hours');
+        const dataHours: launchType[] = await (await axios.get('/hours')).data;
+        const dataProjects: projectType[] = await (
+          await axios.get(`/project`)
+        ).data;
+        const dataUsers: userType[] = await (await axios.get(`/user`)).data;
+
         const arrLaunch: launchType[] = [];
         let count = 0;
 
-        await data.forEach(async (element: launchType) => {
-          handleLoading(true);
+        dataHours.forEach(async (element: launchType) => {
+          let projectName = '';
+          dataProjects.forEach((project) => {
+            if (project._id === element.project) {
+              projectName = project.name;
+              return;
+            }
+          });
 
-          const dataProject = await (
-            await axios.get(`/project/${element.project}`)
-          ).data;
-
-          const dataUser = await (
-            await axios.get(`/user/${element.user}`)
-          ).data;
+          let userName = '';
+          dataUsers.forEach((user) => {
+            if (user._id === element.user) {
+              userName = user.name;
+              return;
+            }
+          });
 
           arrLaunch.push({
             _id: element._id,
             hours: element.hours,
             day: element.day,
-            project: dataProject.name,
-            user: dataUser.name,
+            project: projectName,
+            user: userName,
           });
 
-          if (count === data.length - 1) {
+          if (count === dataHours.length - 1) {
             const arrSorted = arrLaunch.sort((a, b) => {
               return a.day < b.day ? 1 : a.day > b.day ? -1 : 0;
             });
