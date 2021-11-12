@@ -4,6 +4,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 import { Container } from './styled';
 import validator from 'validator';
 import { payloadTypes } from './dto';
+import { Link } from 'react-router-dom';
 
 type dataTypes = {
   email: HTMLInputElement;
@@ -75,6 +76,8 @@ function Login(): JSX.Element {
           placeholder="Senha"
           onChange={(e) => setPassword(e.target.value)}
         />
+
+        <Link to="/register">Cadastre-se</Link>
 
         <button type="submit">Entrar</button>
       </form>

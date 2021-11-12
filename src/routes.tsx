@@ -7,6 +7,7 @@ import Launch from './pages/Launch';
 import Login from './pages/Login';
 import Page404 from './pages/Page404';
 import ProjectRegistration from './pages/ProjectRegistration';
+import Register from './pages/Register';
 import ReportLaunch from './pages/ReportLaunch';
 import UserRegistration from './pages/UserRegistration';
 
@@ -33,6 +34,7 @@ function MainRoutes(): JSX.Element {
       <Route path="" element={<PublicOutlet />}>
         <Route path="login" element={<Login />} />
         <Route path="logout" element={<Navigate to="/login" />} />
+        <Route path="register" element={<Register />} />
       </Route>
 
       <Route path="registration" element={<PrivateOutlet />}>

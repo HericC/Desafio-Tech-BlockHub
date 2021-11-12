@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Container = styled.main`
-  max-width: 460px;
+  max-width: 560px;
   background-color: white;
   margin: 150px auto;
   padding: 30px;
@@ -18,7 +18,7 @@ const Container = styled.main`
     }
   }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 600px) {
     margin: 150px 20px;
   }
 `;
