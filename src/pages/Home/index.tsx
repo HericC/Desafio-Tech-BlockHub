@@ -60,7 +60,7 @@ function Home(): JSX.Element {
 
         setProjectHoursJob(arrProjectHoursJobSorted);
         setMonthsHoursJob(arrMonthsHoursJob);
-      }, 100);
+      }, 200);
     }
     getRequest(`project`, callbackProject);
     getRequest('hours', callback);
