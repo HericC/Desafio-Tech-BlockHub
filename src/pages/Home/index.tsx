@@ -54,7 +54,11 @@ function Home(): JSX.Element {
           handleMonthsHoursJob(element, arrMonthsHoursJob);
         });
 
-        setProjectHoursJob(arrProjectHoursJob);
+        const arrProjectHoursJobSorted = arrProjectHoursJob.sort((a, b) => {
+          return a[1] < b[1] ? 1 : a[1] > b[1] ? -1 : 0;
+        });
+
+        setProjectHoursJob(arrProjectHoursJobSorted);
         setMonthsHoursJob(arrMonthsHoursJob);
       }, 100);
     }
