@@ -27,6 +27,8 @@ type propsTypes = {
 function ExportButtons(props: propsTypes): JSX.Element {
   function exportExcel() {
     console.log('exported excel');
+
+    window.alert('Esta funcionalidade ainda não foi habilitada.');
   }
 
   function exportPdf() {
