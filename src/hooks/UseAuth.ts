@@ -36,7 +36,7 @@ function UseAuth(): propTypes {
 
       setCookie('token', token, {
         secure: true,
-        maxAge: 3600,
+        maxAge: 3600 * 2,
       });
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
       setAuthenticated(true);
