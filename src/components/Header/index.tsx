@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaSignOutAlt, FaBars, FaWindowClose } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { Nav } from './styled';
@@ -8,6 +8,37 @@ import { AuthContext } from '../../contexts/AuthContext';
 function Header(): JSX.Element {
   const [mobile, setMobile] = useState(false);
   const { handleLogout } = useContext(AuthContext);
+
+  useEffect(() => {
+    const arrUrl = document.URL.split('/');
+
+    let url = '';
+    for (let i = 3; i < arrUrl.length; i++) {
+      url += `/${arrUrl[i]}`;
+    }
+
+    let child = -1;
+    switch (url) {
+      case '/registration/user':
+        child = 1;
+        break;
+      case '/registration/project':
+        child = 2;
+        break;
+      case '/registration/hours':
+        child = 3;
+        break;
+      case '/launch':
+        child = 4;
+        break;
+      default:
+        break;
+    }
+
+    document
+      .querySelector(`#navbar li:nth-child(${child}) a`)
+      ?.classList.add('active');
+  }, []);
 
   function handleMobile() {
     setMobile(!mobile);
@@ -25,7 +56,7 @@ function Header(): JSX.Element {
         </Link>
       </div>
 
-      <ul className={mobile ? 'active' : ''}>
+      <ul className={mobile ? 'active' : ''} id="navbar">
         <li>
           <Link to="/registration/user" onClick={closeMobile}>
             Cadastrar Usuário

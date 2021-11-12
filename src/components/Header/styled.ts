@@ -39,7 +39,8 @@ const Nav = styled.nav`
   }
 
   ul {
-    a:hover {
+    a:hover,
+    a.active {
       background-color: ${({ theme }) => theme.colors.primaryLight};
     }
   }
