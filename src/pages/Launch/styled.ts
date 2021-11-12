@@ -12,6 +12,11 @@ const Container = styled.main`
     margin-bottom: 20px;
   }
 
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
   table {
     width: 100%;
     border-collapse: collapse;

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ExportButtons from '../../components/ExportButtons';
 import Header from '../../components/Header';
 import TableReportGeral from '../../components/TableReportGeral';
 import TableReportMonth from '../../components/TableReportMonth';

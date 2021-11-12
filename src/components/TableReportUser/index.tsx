@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from './styled';
 import { UserJobType } from '../../pages/ReportLaunch/dto';
+import ExportButtons from '../ExportButtons';
 
 type propsTypes = {
   usersJob: UserJobType[];
@@ -9,7 +10,15 @@ type propsTypes = {
 function TableReportUser(props: propsTypes): JSX.Element {
   return (
     <Container>
-      <h2>Por usuário</h2>
+      <header>
+        <h2>Por usuário</h2>
+
+        <ExportButtons
+          title="Relatório por usuário"
+          type="users"
+          arrReports={{ usersJob: props.usersJob }}
+        />
+      </header>
 
       <table>
         <thead>

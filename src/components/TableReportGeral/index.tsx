@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from './styled';
 import { geralJobType } from '../../pages/ReportLaunch/dto';
+import ExportButtons from '../ExportButtons';
 
 type propsTypes = {
   geralJob: geralJobType[];
@@ -9,7 +10,15 @@ type propsTypes = {
 function TableReportGeral(props: propsTypes): JSX.Element {
   return (
     <Container>
-      <h2>Geral</h2>
+      <header>
+        <h2>Geral</h2>
+
+        <ExportButtons
+          title="Relatório geral"
+          type="geral"
+          arrReports={{ geralJob: props.geralJob }}
+        />
+      </header>
 
       <table>
         <thead>

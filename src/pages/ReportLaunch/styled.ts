@@ -12,6 +12,11 @@ const Container = styled.main`
     margin-bottom: 20px;
   }
 
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
   section {
     margin-bottom: 40px;
 

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import ExportButtons from '../../components/ExportButtons';
 import Header from '../../components/Header';
 import { LoadingContext } from '../../contexts/LoadingContext';
 import axios from '../../services/axios';
@@ -72,7 +73,15 @@ function Launch(): JSX.Element {
     <>
       <Header />
       <Container>
-        <h1>Lançamentos</h1>
+        <header>
+          <h1>Lançamentos</h1>
+
+          <ExportButtons
+            title="Lançamentos"
+            type="launch"
+            arrReports={{ launch }}
+          />
+        </header>
 
         <table>
           <thead>
